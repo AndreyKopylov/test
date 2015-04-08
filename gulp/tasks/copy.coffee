@@ -16,10 +16,10 @@ gulp.task 'copy:images', ->
 
 gulp.task 'copy:resources', ->
 	gulp.src 'app/resources/**/*'
-		.pipe changed paths.dist
-		.pipe gulpif !gutil.env.robots, filter (file) ->
-			!/app[\\\/]resources[\\\/]robots\.txt/.test file.path
-		.pipe gulp.dest paths.dist
+	.pipe changed paths.dist
+	.pipe gulpif !gutil.env.robots, filter (file) ->
+		!/app[\\\/]resources[\\\/]robots\.txt/.test file.path
+	.pipe gulp.dest paths.dist
 
 gulp.task 'copy:scripts', ->
 	gulp.src ['**/*.js'],
