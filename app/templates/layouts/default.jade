@@ -1,7 +1,12 @@
 include ../helpers/variables
 include ../helpers/mixins
 
-+script([], ['debug.js', 'common.min.js'])
++script([], [
+	'debug.js',
+	'libs/jquery/dist/jquery.min.js',
+	'common.min.js',
+	'tabs/multi-charts.js'
+])
 
 doctype html
 html(lang='ru')

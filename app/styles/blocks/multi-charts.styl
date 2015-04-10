@@ -1,0 +1,266 @@
+.multi-charts
+	&__wrap
+		position absolute
+		top 71px
+		left 458px
+		width 1634px
+		height 1124px
+		transition transform 0.3s, box-shadow 0.3s
+		transform rotateX(59deg) rotateY(-4deg) rotateZ(-38deg)
+		transform-style preserve-3d
+
+		&-slide1
+			position absolute
+			top 0
+			left 0
+			height 100%
+			width 100%
+			background url(../multi-charts/multi-charts-1.png)
+			background-size 100% 100%
+			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
+			transform-style preserve-3d
+			transform translateX(150%)
+			transition transform 0.3s ease, height 0.5s ease
+
+			&:before
+				content ''
+				position absolute
+				height 6px
+				width 100%
+				bottom -20px
+				left 17px
+				transform rotateX(90deg) translateZ(41px) translateY(-20px)
+				background #444751
+				pointer-events none
+
+			&:after
+				content ''
+				position absolute
+				height 100%
+				width 6px
+				top -20px
+				left -30px
+				transform rotateY(90deg) translateZ(42px) translateX(18px)
+				background #191C25
+				pointer-events none
+
+	&.js-multi-charts-slide-one &__wrap-slide1
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease
+
+	&.js-multi-charts-slide-one-two &__wrap-slide1
+		height 49.7%
+		margin-bottom 0.3%
+		background url(../multi-charts/multi-charts-1-2.png)
+		background-size 100% 100%
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease
+		will-change transform, height, background
+
+	&.js-multi-charts-slide-one-three &__wrap-slide1
+		width 49.7%
+		height 49.7%
+		margin-bottom .3%
+		margin-right .3%
+		background url(../multi-charts/multi-charts-1-3.png)
+		background-size 100% 100%
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
+		will-change transform, height, width
+
+	&.js-multi-charts-slide-one	&__wrap
+		&:after
+			content ''
+			position absolute
+			top 0
+			left 0
+			sprite $finger
+			animation animationFrames linear 3s
+			animation-iteration-count infinite
+			transform-origin 50% 50%
+			@keyframes animationFrames
+				0%
+					opacity 0
+				50%
+					opacity 1
+				100%
+					opacity 0
+
+	&.js-multi-charts-slide-two	&__wrap
+		&:after
+			content ''
+			position absolute
+			top 0
+			left 0
+			sprite $finger
+			animation animationFrames linear 3s
+			animation-iteration-count infinite
+			transform-origin 50% 50%
+			@keyframes animationFrames
+				0%
+					opacity 0
+				50%
+					opacity 1
+				100%
+					opacity 0
+	&.js-multi-charts-slide-three &__wrap
+		&:after
+			content ''
+			position absolute
+			top 0
+			left 50%
+			sprite $finger
+			animation animationFrames linear 3s
+			animation-iteration-count infinite
+			transform-origin 50% 50%
+			@keyframes animationFrames
+				0%
+					opacity 0
+				50%
+					opacity 1
+				100%
+					opacity 0
+
+.multi-charts
+	&__wrap
+		&-slide2
+			position absolute
+			bottom 0
+			left 0
+			height 50%
+			width 100%
+			background url(../multi-charts/multi-charts-2.png)
+			background-size 100% 100%
+			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
+			transform-style preserve-3d
+			transform translateX(150%)
+			transition transform 0.3s ease, height 0.5s ease
+
+			&:before
+				content ''
+				position absolute
+				height 6px
+				width 100%
+				bottom -20px
+				left 17px
+				transform rotateX(90deg) translateZ(41px) translateY(-20px)
+				background #444751
+				pointer-events none
+
+			&:after
+				content ''
+				position absolute
+				height 100%
+				width 6px
+				top -20px
+				left -30px
+				transform rotateY(90deg) translateZ(42px) translateX(18px)
+				background #191C25
+				pointer-events none
+
+	&.js-multi-charts-slide-two &__wrap-slide2
+		height 49.3%
+		margin-top 0.7%
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease
+
+.multi-charts
+	&__wrap
+		&-slide3
+			position absolute
+			top 0
+			right 0
+			height 50%
+			width 50%
+			background url(../multi-charts/multi-charts-3.png)
+			background-size 100% 100%
+			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
+			transform-style preserve-3d
+			transform translateX(150%)
+			transition transform 0.3s ease, height 0.5s ease
+
+			&:before
+				content ''
+				position absolute
+				height 6px
+				width 100%
+				bottom -20px
+				left 17px
+				transform rotateX(90deg) translateZ(41px) translateY(-20px)
+				background #444751
+				pointer-events none
+
+			&:after
+				content ''
+				position absolute
+				height 100%
+				width 6px
+				top -20px
+				left -30px
+				transform rotateY(90deg) translateZ(42px) translateX(18px)
+				background #191C25
+				pointer-events none
+	&.js-multi-charts-slide-three &__wrap-slide3
+		height 49.7%
+		width 49.7%
+		margin-bottom .3%
+		margin-left .3%
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease
+
+.multi-charts
+	&__title
+		position absolute
+		top 106px
+		left 8px
+		font-size 32px
+		letter-spacing -0.8px
+		color #fff
+		font-family mbt-rb-m
+		text-transform uppercase
+		transform translateY(50px)
+		transition transform 0.3s ease
+
+	&.js-multi-charts-slide-last &__title
+		transform translateY(0px)
+
+	&__text
+		position absolute
+		top 159px
+		width 543px
+		left 8px
+		letter-spacing 0px
+		line-height 21px
+		font-size 18px
+		font-family mbt-rb-l
+		color #A1A1A4
+		transform translateY(50px)
+		transition transform 0.3s ease
+
+	&.js-multi-charts-slide-last &__text
+		transform translateY(0px)
+
+	&__btn
+		display block
+		position absolute
+		top 308px
+		left 10px
+		height 43px
+		margin-top 5px
+		padding-right 40px
+		padding-left 40px
+		border-radius 3px
+		background #2E343C
+		box-shadow 0 5px 0 0 #28292E, 0 6px 5px 0 rgba(50,50,50,.6)
+		font-size 19px
+		line-height 43px
+		letter-spacing -0.1px
+		text-transform uppercase
+		cursor pointer
+		color #fff
+		font-family mbt-rb-bl
+		transform translateX(-300%)
+		transition transform 0.3s ease
+
+	&.js-multi-charts-slide-last &__btn
+		transform translateX(0%)
