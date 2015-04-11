@@ -120,6 +120,10 @@
 					opacity 1
 				100%
 					opacity 0
+	&.js-multi-charts-slide-last &__wrap
+		&:after
+			display none
+
 
 .multi-charts
 	&__wrap
@@ -159,10 +163,19 @@
 				pointer-events none
 
 	&.js-multi-charts-slide-two &__wrap-slide2
-		height 49.3%
-		margin-top 0.7%
+		height 49.7%
+		margin-top 0.3%
 		transform translateX(0%)
 		transition transform 0.5s ease, height 0.5s ease
+	&.js-multi-charts-slide-two-two &__wrap-slide2
+		height 49.7%
+		width 49.7%
+		margin-right 0.3%
+		margin-top 0.3%
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
+		background url(../multi-charts/multi-charts-2-1.png)
+		background-size 100% 100%
 
 .multi-charts
 	&__wrap
@@ -170,8 +183,8 @@
 			position absolute
 			top 0
 			right 0
-			height 50%
-			width 50%
+			height 49.7%
+			width 49.7%
 			background url(../multi-charts/multi-charts-3.png)
 			background-size 100% 100%
 			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
@@ -206,7 +219,51 @@
 		margin-bottom .3%
 		margin-left .3%
 		transform translateX(0%)
-		transition transform 0.5s ease, height 0.5s ease
+		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
+
+.multi-charts
+	&__wrap
+		&-slide4
+			position absolute
+			bottom 0
+			right 0
+			height 49.7%
+			width 49.7%
+			background url(../multi-charts/multi-charts-4.png)
+			background-size 100% 100%
+			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
+			transform-style preserve-3d
+			transform translateX(150%)
+			transition transform 0.3s ease, height 0.5s ease
+
+			&:before
+				content ''
+				position absolute
+				height 6px
+				width 100%
+				bottom -20px
+				left 17px
+				transform rotateX(90deg) translateZ(41px) translateY(-20px)
+				background #444751
+				pointer-events none
+
+			&:after
+				content ''
+				position absolute
+				height 100%
+				width 6px
+				top -20px
+				left -30px
+				transform rotateY(90deg) translateZ(42px) translateX(18px)
+				background #191C25
+				pointer-events none
+	&.js-multi-charts-slide-last &__wrap-slide4
+		height 49.7%
+		width 49.7%
+		margin-top .3%
+		margin-left .3%
+		transform translateX(0%)
+		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
 
 .multi-charts
 	&__title
@@ -218,11 +275,16 @@
 		color #fff
 		font-family mbt-rb-m
 		text-transform uppercase
-		transform translateY(50px)
+		transform translateY(50px) translateX(-300%)
+		transition transform 0.3s ease
+
+	&.js-active-tab &__title
+		transform translateY(50px) translateX(0%)
 		transition transform 0.3s ease
 
 	&.js-multi-charts-slide-last &__title
 		transform translateY(0px)
+		transition transform 0.3s ease
 
 	&__text
 		position absolute
@@ -234,11 +296,17 @@
 		font-size 18px
 		font-family mbt-rb-l
 		color #A1A1A4
-		transform translateY(50px)
+		transform translateY(50px) translateX(-300%)
+		transition transform 0.3s ease
+
+	&.js-active-tab &__text
+		transform translateY(50px) translateX(0%)
 		transition transform 0.3s ease
 
 	&.js-multi-charts-slide-last &__text
 		transform translateY(0px)
+		transition transform 0.3s ease
+
 
 	&__btn
 		display block

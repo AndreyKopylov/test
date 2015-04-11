@@ -1,13 +1,12 @@
 
 
 	var
-		$multiCharts = $('.multi-charts'),
+		$multiCharts = $('#multi-charts'),
 		// block classes
 		$multiChartsWrapSlide1 = $('.multi-charts__wrap-slide1'),
-		$multiChartsWrapSlide2 = $('.multi-charts__wrap-slide2'),
 		$multiChartsWrapSlide3 = $('.multi-charts__wrap-slide3'),
 
-		//animation classes
+		// animation classes
 		multiChartSlideOne = 'js-multi-charts-slide-one',
 		multiChartSlideOneTwo = 'js-multi-charts-slide-one-two',
 		multiChartSlideOneThree = 'js-multi-charts-slide-one-three',
@@ -19,17 +18,25 @@
 
 		multiChartSlideLast = 'js-multi-charts-slide-last',
 
+		$multiChartNextBtn = $('#multiChartsBtn'),
 
+		activeTab = 'js-active-tab',
+
+		$sharing = $('#sharing'),
+		sharingSlideOne = 'js-sharing-slide-one';
+
+	// 1
 	$(document).ready(function () {
 		setTimeout(function () {
 			$multiCharts.addClass(multiChartSlideOne);
+			$multiCharts.addClass(activeTab);
 		}, 500);
 	});
 
 	var slide12 = false;
-
+	// 3
 	$multiChartsWrapSlide1.on('click', function () {
-		if(!slide12) {
+		if (!slide12) {
 			return false;
 		} else if (slide12 = true) {
 			$multiCharts.addClass(multiChartSlideOneThree, $multiCharts.hasClass(multiChartSlideTwo));
@@ -39,7 +46,7 @@
 			$multiCharts.removeClass(multiChartSlideOneTwo, $multiCharts.hasClass(multiChartSlideOneThree));
 		}
 	});
-
+	// 2
 	$multiChartsWrapSlide1.on('click', function () {
 		$multiCharts.addClass(multiChartSlideOneTwo, $multiCharts.hasClass(multiChartSlideOne));
 		setTimeout(function () {
@@ -48,15 +55,22 @@
 		$multiCharts.removeClass(multiChartSlideOne, $multiCharts.hasClass(multiChartSlideOneTwo));
 		slide12 = true;
 	});
-
+	// 4
 	$multiChartsWrapSlide3.on('click', function () {
 		$multiCharts.addClass(multiChartSlideTwoTwo, $multiCharts.hasClass(multiChartSlideThree));
 		setTimeout(function () {
 			$multiCharts.addClass(multiChartSlideLast);
 		}, 500);
-		$multiCharts.removeClass(multiChartSlideOne, $multiCharts.hasClass(multiChartSlideOneTwo));
+		$multiCharts.removeClass(multiChartSlideTwo, $multiCharts.hasClass(multiChartSlideTwoTwo));
 	});
 
+	$multiChartNextBtn.on('click', function () {
+		$multiCharts.removeClass();
+		setTimeout(function () {
+			$sharing.addClass(activeTab);
+			$sharing.addClass(sharingSlideOne);
+		});
+	});
 
 
 
