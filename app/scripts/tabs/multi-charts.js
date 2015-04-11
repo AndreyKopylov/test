@@ -23,7 +23,11 @@
 		activeTab = 'js-active-tab',
 
 		$sharing = $('#sharing'),
-		sharingSlideOne = 'js-sharing-slide-one';
+		sharingSlideOne = 'js-sharing-slide-one',
+		sharingSlideOneTwo = 'js-sharing-slide-one-two',
+
+		$slider = $('#slider'),
+		sliderBgGray = 'slider-bg-gray';
 
 	// 1
 	$(document).ready(function () {
@@ -66,10 +70,14 @@
 
 	$multiChartNextBtn.on('click', function () {
 		$multiCharts.removeClass();
+		$sharing.addClass(activeTab);
+		$slider.addClass(sliderBgGray);
+		$sharing.addClass(sharingSlideOne);
 		setTimeout(function () {
-			$sharing.addClass(activeTab);
-			$sharing.addClass(sharingSlideOne);
-		});
+			$sharing.addClass(sharingSlideOneTwo);
+		}, 2000);
+		$sharing.removeClass(sharingSlideOne, $sharing.hasClass(sharingSlideOneTwo));
+
 	});
 
 
