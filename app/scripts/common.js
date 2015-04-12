@@ -25,6 +25,8 @@ $(function () {
 		multiChartSlideLast = 'js-multi-charts-slide-last',
 
 		$multiChartNextBtn = $('#multiChartsBtn'),
+		$sharingNextBtn = $('#sharingBtn'),
+		$dealsNextBtn = $('#dealsBtn'),
 
 		activeTab = 'js-active-tab',
 
@@ -37,16 +39,27 @@ $(function () {
 		sharingSlideThreeTwo = 'js-sharing-slide-three-two',
 		sharingSlideLast = 'js-sharing-slide-last',
 
+		$deals = $('#deals'),
+		dealsSlideOne = 'js-deals-slide-one',
+		dealsSlideOneTwo = 'js-deals-slide-one-two',
+		dealsSlideTwo = 'js-deals-slide-two',
+		dealsSlideThree = 'js-deals-slide-three',
+		dealsSlideThreeOne = 'js-deals-slide-three-one',
+		dealsSlideFour = 'js-deals-slide-four',
+		dealsSlideTextOne = 'js-deals-slide-text-one',
+
 		$slider = $('#slider'),
 		sliderBgGray = 'slider-bg-gray',
 
 		// tabs
 		$tabMultiCharts = $('.tabs__multi-charts'),
 		$tabSharing = $('.tabs__sharing'),
+		$tabDeals = $('.tabs__deals'),
 
 		// tabs btn's
 		tabMultiChartsActive = 'js-multi-charts-active',
-		tabSharingActive = 'js-sharing-active';
+		tabSharingActive = 'js-sharing-active',
+		tabDealsActive = 'js-deals-active';
 
 	// 1
 	$(document).ready(function () {
@@ -89,6 +102,8 @@ $(function () {
 
 	$multiChartNextBtn.on('click', function () {
 		$multiCharts.removeClass();
+		$tabSharing.addClass(tabSharingActive);
+		$tabMultiCharts.removeClass(tabMultiChartsActive);
 		$sharing.addClass(activeTab);
 		$sharing.addClass(sharingSlideOne);
 		setTimeout(function () {
@@ -121,17 +136,25 @@ $(function () {
 		$multiCharts.addClass('multi-charts');
 		$sharing.removeClass();
 		$sharing.addClass('sharing');
+		$deals.removeClass();
+		$deals.addClass('deals');
+		$slider.removeClass(sliderBgGray);
 
 	}
 	function removeTabs() {
 		$tabMultiCharts.removeClass(tabMultiChartsActive);
 		$tabSharing.removeClass(tabSharingActive);
+		$tabDeals.removeClass(tabDealsActive);
 	}
 
 	$tabMultiCharts.on('click', function () {
 		removeTabs();
 		$(this).addClass(tabMultiChartsActive);
 		removeSlides();
+		setTimeout(function () {
+			$multiCharts.addClass(multiChartSlideOne);
+			$multiCharts.addClass(activeTab);
+		}, 500);
 	});
 	$tabSharing.on('click', function () {
 		removeTabs();
@@ -148,6 +171,34 @@ $(function () {
 			$sharing.addClass(sharingSlideThree);
 		}, 1000);
 	});
+	function dealsOpen(target) {
+		target.on('click', function () {
+			removeTabs();
+			$tabDeals.addClass(tabDealsActive);
+			removeSlides();
+			$deals.addClass(activeTab);
+			$deals.addClass(dealsSlideOne);
+			setTimeout(function () {
+				$deals.addClass(dealsSlideTwo);
+			}, 1000);
+			setTimeout(function () {
+				$deals.addClass(dealsSlideThree);
+			}, 2000);
+			setTimeout(function () {
+				$deals.addClass(dealsSlideThreeOne);
+				$deals.addClass(dealsSlideTextOne)
+			}, 2700);
+		});
+	}
+	dealsOpen($tabDeals);
+	dealsOpen($sharingNextBtn);
 
+	$dealsNextBtn.on('click', function () {
+		$deals.addClass(dealsSlideOneTwo);
+		setTimeout(function () {
+			$deals.addClass(dealsSlideFour);
+			$deals.removeClass(dealsSlideTextOne);
+		}, 1000);
+	});
 });
 
