@@ -38,7 +38,15 @@ $(function () {
 		sharingSlideLast = 'js-sharing-slide-last',
 
 		$slider = $('#slider'),
-		sliderBgGray = 'slider-bg-gray';
+		sliderBgGray = 'slider-bg-gray',
+
+		// tabs
+		$tabMultiCharts = $('.tabs__multi-charts'),
+		$tabSharing = $('.tabs__sharing'),
+
+		// tabs btn's
+		tabMultiChartsActive = 'js-multi-charts-active',
+		tabSharingActive = 'js-sharing-active';
 
 	// 1
 	$(document).ready(function () {
@@ -108,4 +116,38 @@ $(function () {
 		}, 2000);
 	});
 
+	function removeSlides() {
+		$multiCharts.removeClass();
+		$multiCharts.addClass('multi-charts');
+		$sharing.removeClass();
+		$sharing.addClass('sharing');
+
+	}
+	function removeTabs() {
+		$tabMultiCharts.removeClass(tabMultiChartsActive);
+		$tabSharing.removeClass(tabSharingActive);
+	}
+
+	$tabMultiCharts.on('click', function () {
+		removeTabs();
+		$(this).addClass(tabMultiChartsActive);
+		removeSlides();
+	});
+	$tabSharing.on('click', function () {
+		removeTabs();
+		$(this).addClass(tabSharingActive);
+		removeSlides();
+		$sharing.addClass(activeTab);
+		$sharing.addClass(sharingSlideOne);
+		setTimeout(function () {
+			$sharing.addClass(sharingSlideOneTwo);
+			$sharing.addClass(sharingSlideTwo);
+
+		}, 1000);
+		setTimeout(function () {
+			$sharing.addClass(sharingSlideThree);
+		}, 1000);
+	});
+
 });
+
