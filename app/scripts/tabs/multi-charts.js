@@ -25,6 +25,7 @@
 		$sharing = $('#sharing'),
 		sharingSlideOne = 'js-sharing-slide-one',
 		sharingSlideOneTwo = 'js-sharing-slide-one-two',
+		sharingSlideTwo = 'js-sharing-slide-two',
 
 		$slider = $('#slider'),
 		sliderBgGray = 'slider-bg-gray';
@@ -75,8 +76,8 @@
 		$sharing.addClass(sharingSlideOne);
 		setTimeout(function () {
 			$sharing.addClass(sharingSlideOneTwo);
+			$sharing.addClass(sharingSlideTwo);
 		}, 2000);
-		$sharing.removeClass(sharingSlideOne, $sharing.hasClass(sharingSlideOneTwo));
 
 	});
 

@@ -68,61 +68,23 @@
 		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
 		will-change transform, height, width
 
-	&.js-multi-charts-slide-one	&__wrap
-		&:after
-			content ''
-			position absolute
-			top 0
-			left 0
-			sprite $finger
-			animation animationFrames linear 3s
-			animation-iteration-count infinite
-			transform-origin 50% 50%
-			@keyframes animationFrames
-				0%
-					opacity 0
-				50%
-					opacity 1
-				100%
-					opacity 0
-
-	&.js-multi-charts-slide-two	&__wrap
-		&:after
-			content ''
-			position absolute
-			top 0
-			left 0
-			sprite $finger
-			animation animationFrames linear 3s
-			animation-iteration-count infinite
-			transform-origin 50% 50%
-			@keyframes animationFrames
-				0%
-					opacity 0
-				50%
-					opacity 1
-				100%
-					opacity 0
-	&.js-multi-charts-slide-three &__wrap
-		&:after
-			content ''
-			position absolute
-			top 0
-			left 50%
-			sprite $finger
-			animation animationFrames linear 3s
-			animation-iteration-count infinite
-			transform-origin 50% 50%
-			@keyframes animationFrames
-				0%
-					opacity 0
-				50%
-					opacity 1
-				100%
-					opacity 0
-	&.js-multi-charts-slide-last &__wrap
-		&:after
-			display none
+	&.js-multi-charts-slide-one	&__click
+		z-index -1
+		display block
+		top -25.7px
+		left 5.2%
+	&.js-multi-charts-slide-two	&__click
+		z-index -1
+		display block
+		top -25.7px
+		left 5.2%
+	&.js-multi-charts-slide-three &__click
+		z-index 1
+		display block
+		top -32px
+		left 51.4%
+	&.js-multi-charts-slide-last &__click
+		display none
 
 
 .multi-charts
@@ -137,7 +99,7 @@
 			background-size 100% 100%
 			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
 			transform-style preserve-3d
-			transform translateX(150%)
+			transform translateX(150%) translateZ(0.1px);
 			transition transform 0.3s ease, height 0.5s ease
 
 			&:before
@@ -165,14 +127,14 @@
 	&.js-multi-charts-slide-two &__wrap-slide2
 		height 49.7%
 		margin-top 0.3%
-		transform translateX(0%)
+		transform translateX(0%) translateZ(0.1px)
 		transition transform 0.5s ease, height 0.5s ease
 	&.js-multi-charts-slide-two-two &__wrap-slide2
 		height 49.7%
 		width 49.7%
 		margin-right 0.3%
 		margin-top 0.3%
-		transform translateX(0%)
+		transform translateX(0%) translateZ(0.1px)
 		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
 		background url(../images/multi-charts/multi-charts-2-1.png)
 		background-size 100% 100%
@@ -180,6 +142,7 @@
 .multi-charts
 	&__wrap
 		&-slide3
+			z-index 2
 			position absolute
 			top 0
 			right 0
@@ -220,6 +183,8 @@
 		margin-left .3%
 		transform translateX(0%)
 		transition transform 0.5s ease, height 0.5s ease, width 0.5s ease
+	&.js-multi-charts-slide-last  &__wrap-slide3
+		z-index 0
 
 .multi-charts
 	&__wrap

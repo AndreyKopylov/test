@@ -1,15 +1,14 @@
 .sharing
 	&__wrap
+		z-index 0
 		position absolute
-		top 71px
-		left 458px
-		width 1634px
-		height 1124px
-		transition transform 0.3s, box-shadow 0.3s
+		top -166px
+		left -141px
+		width 1734px
+		height 1184px
+		transition transform 1s, box-shadow 0.3s
 		transform rotateX(59deg) rotateY(-4deg) rotateZ(-38deg)
 		transform-style preserve-3d
-
-
 
 		&-slide1
 			position absolute
@@ -21,8 +20,9 @@
 			background-size 100% 100%
 			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
 			transform-style preserve-3d
-			transform translateX(250%)
-			transition transform 0.3s ease, height 0.5s ease, opacity .5s ease
+			transform translateX(150%)
+			transition transform 1s ease, height 0.5s ease, opacity .5s ease
+			will-change transform
 
 			&:before
 				content ''
@@ -47,28 +47,44 @@
 				pointer-events none
 	&.js-sharing-slide-one &__wrap-slide1
 		transform translateX(0%)
-		transition transform 0.5s ease, height 0.5s ease, opacity .5s ease
+		transition transform 1s ease, height 1s ease, opacity .5s ease
 		opacity 1
-	&.js-sharing-slide-one-two &__wrap-slide1
-		transform translateX(0%)
-		transition transform 0.5s ease, height 0.5s ease, opacity .5s ease
-		opacity 0.6
+	&.js-active-tab &__wrap-slide1
+		z-index 1
+	&.js-sharing-slide-one-two &__wrap
+		&:after
+			content ''
+			width 100%
+			height 100%
+			background #000
+			opacity 0.8
 
 
 .sharing
-	&__wrap
+	&__wrap2
+		z-index 0
+		position absolute
+		top -166px
+		left -141px
+		width 1734px
+		height 1184px
+		transition transform 0.3s, box-shadow 0.3s
+		transform rotateX(59deg) rotateY(-4deg) rotateZ(-38deg)
+		transform-style preserve-3d
 		&-slide2
+			z-index 2
 			position absolute
-			top 0
-			left 0
-			height 50%
-			width 60%
+			top 362px
+			left 667px
+			width 43.9%
+			height 62.5%
 			background url(../images/sharing/sharing-2.png)
 			background-size 100% 100%
 			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
 			transform-style preserve-3d
-			transform translateX(150%)
+			transform translateX(0%) translateZ(1200px)
 			transition transform 0.3s ease, height 0.5s ease
+			will-change transform
 
 			&:before
 				content ''
@@ -92,22 +108,111 @@
 				background #191C25
 				pointer-events none
 
-	&.js-sharing-slide-two &__wrap-slide2
-		transform translateX(0%)
+	&.js-sharing-slide-two &__wrap2-slide2
+		transform translateX(0%) translateZ(1px)
 		transition transform 0.5s ease, height 0.5s ease
+	&.js-sharing-slide-two &__wrap2
+		z-index 1
+		background rgba(0, 0, 0, 0.5)
+	&.js-sharing-slide-two-two &__wrap2-slide2
+		transform translateX(250%)
+		transition transform 1s ease, height 0.5s ease
+	&.js-active-tab &__wrap2-slide2
+		z-index 2
+	&.js-sharing-slide-two &__click
+		display block
+		bottom 7.1%
+		left 57.2%
+		transform translateZ(1px)
+
+.sharing
+	&__wrap2
+		z-index 0
+		position absolute
+		top -166px
+		left -141px
+		width 1734px
+		height 1184px
+		transition transform 0.3s, box-shadow 0.3s
+		transform rotateX(59deg) rotateY(-4deg) rotateZ(-38deg)
+		transform-style preserve-3d
+
+		&-slide3
+			z-index 2
+			position absolute
+			top 441px
+			left 684px
+			width 41.9%
+			height 38.3%
+			background url(../images/sharing/sharing-3.png)
+			background-size 100% 100%
+			transform-style preserve-3d
+			transform translateX(0%) translateY(-14px) translateZ(1200px)
+			transition transform 0.3s ease, height 0.5s ease
+			will-change transform
+	&.js-sharing-slide-three &__wrap2-slide3
+		transform translateX(0%)  translateY(-14px) translateZ(1px)
+		transition transform 0.5s ease
+
+	&.js-sharing-slide-three-two &__wrap2-slide3
+		transform translateX(0%)  translateY(-14px) translateZ(-39px)
+		transition transform 0.5s ease
+
+.sharing
+	&__wrap
+		&-slide4
+			position absolute
+			top 0
+			left 0
+			height 100%
+			width 100%
+			background url(../images/sharing/sharing-4.png)
+			background-size 100% 100%
+			box-shadow -100px 100px 80px -2px rgba(0,0,0,0.6)
+			transform-style preserve-3d
+			transform translateX(150%)
+			transition transform 1s ease, height 0.5s ease, opacity .5s ease
+			will-change transform
+
+			&:before
+				content ''
+				position absolute
+				height 6px
+				width 100%
+				bottom -20px
+				left 17px
+				transform rotateX(90deg) translateZ(41px) translateY(-20px)
+				background #EFEFF2
+				pointer-events none
+
+			&:after
+				content ''
+				position absolute
+				height 100%
+				width 6px
+				top -20px
+				left -30px
+				transform rotateY(90deg) translateZ(42px) translateX(18px)
+				background #B0B0B3
+				pointer-events none
+	&.js-sharing-slide-last &__wrap-slide4
+		transform translateX(0%)
+		transition transform 1s ease, height 1s ease, opacity .5s ease
+		opacity 1
 
 .sharing
 	&__title
 		position absolute
-		top 106px
-		left 8px
+		top 458px
+		right 8px
 		font-size 32px
 		letter-spacing -0.8px
 		color #fff
 		font-family mbt-rb-m
 		text-transform uppercase
-		transform translateY(50px) translateX(-300%)
+		transform translateY(50px) translateX(400%)
 		transition transform 0.3s ease
+		will-change transform
 
 	&.js-active-tab &__title
 		transform translateY(50px) translateX(0%)
@@ -119,16 +224,18 @@
 
 	&__text
 		position absolute
-		top 159px
+		top 510px
 		width 543px
-		left 8px
+		right 8px
+		text-align right
 		letter-spacing 0px
 		line-height 21px
 		font-size 18px
 		font-family mbt-rb-l
 		color #A1A1A4
-		transform translateY(50px) translateX(-300%)
+		transform translateY(50px) translateX(300%)
 		transition transform 0.3s ease
+		will-change transform
 
 	&.js-active-tab &__text
 		transform translateY(50px) translateX(0%)
@@ -138,12 +245,11 @@
 		transform translateY(0px)
 		transition transform 0.3s ease
 
-
 	&__btn
 		display block
 		position absolute
-		top 308px
-		left 10px
+		top 636px
+		right 10px
 		height 43px
 		margin-top 5px
 		padding-right 40px
@@ -158,8 +264,11 @@
 		cursor pointer
 		color #fff
 		font-family mbt-rb-bl
-		transform translateX(-300%)
+		transform translateX(300%)
 		transition transform 0.3s ease
+		will-change transform
 
-	&.js-multi-charts-slide-last &__btn
+	&.js-sharing-slide-last &__btn
 		transform translateX(0%)
+
+
